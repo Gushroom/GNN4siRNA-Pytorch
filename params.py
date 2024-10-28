@@ -3,13 +3,13 @@
 ##################
 
 #k-mers of siRNA sequences
-sirna_kmer_file = "/Users/dan/Desktop/pybullet/GNN4siRNA/data/processed/dataset_1/sirna_kmers.txt"
+sirna_kmer_file = "/Users/dan/Desktop/pybullet/GNN4siRNA/data/processed/dataset_3/sirna_kmers.txt"
 #k-mers of mRNA sequences
-mrna_kmer_file = "/Users/dan/Desktop/pybullet/GNN4siRNA/data/processed/dataset_1/mRNA_kmers.txt"
+mrna_kmer_file = "/Users/dan/Desktop/pybullet/GNN4siRNA/data/processed/dataset_3/mRNA_kmers.txt"
 #thermodynamic features of siRNA-mRNA interaction
-sirna_target_thermo_file = "/Users/dan/Desktop/pybullet/GNN4siRNA/data/processed/dataset_1/sirna_target_thermo.csv"
+sirna_target_thermo_file = "/Users/dan/Desktop/pybullet/GNN4siRNA/data/processed/dataset_3/sirna_target_thermo.csv"
 # sirna_efficacy_values
-sirna_efficacy_file = "/Users/dan/Desktop/pybullet/GNN4siRNA/data/processed/dataset_1/sirna_mrna_efficacy.csv"
+sirna_efficacy_file = "/Users/dan/Desktop/pybullet/GNN4siRNA/data/processed/dataset_3/sirna_mrna_efficacy.csv"
 
 ##################
 # GNN Hyperparameters

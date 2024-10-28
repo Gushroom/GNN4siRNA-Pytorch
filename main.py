@@ -87,6 +87,11 @@ siRNA_to_interaction_edges = torch.tensor(
     mapped_interaction_connections_df[['siRNA', 'interaction']].values, dtype=torch.long
 ).t().contiguous()
 data['siRNA', 'to', 'interaction'].edge_index = siRNA_to_interaction_edges
+# Edge: interaction -> siRNA
+interaction_to_siRNA_edges = torch.tensor(
+    mapped_interaction_connections_df[['interaction', 'siRNA']].values, dtype=torch.long
+).t().contiguous()
+data['interaction', 'to', 'siRNA'].edge_index = interaction_to_siRNA_edges
 # show the shape of the interaction node edges
 # print(data['siRNA', 'to', 'interaction'].edge_index.shape) # (2, 2816)
 # Edge: mRNA -> interaction
@@ -94,6 +99,11 @@ mRNA_to_interaction_edges = torch.tensor(
     mapped_interaction_connections_df[['mRNA', 'interaction']].values, dtype=torch.long
 ).t().contiguous() 
 data['mRNA', 'to', 'interaction'].edge_index = mRNA_to_interaction_edges
+# Edge: interaction -> mRNA
+interaction_to_mRNA_edges = torch.tensor(
+    mapped_interaction_connections_df[['interaction', 'mRNA']].values, dtype=torch.long
+).t().contiguous()
+data['interaction', 'to', 'mRNA'].edge_index = interaction_to_mRNA_edges
 # show the shape of the interaction node edges
 # print(data['mRNA', 'to', 'interaction'].edge_index.shape) # (2, 2816)
 # Correctly add self-loops for siRNA nodes (shape [2, num_nodes])
@@ -131,6 +141,10 @@ class HeteroGraphSAGE(nn.Module):
         self.conv2 = HeteroConv({
             ('siRNA', 'to', 'interaction'): SAGEConv((-1, -1), hinsage_layer_sizes[1]),
             ('mRNA', 'to', 'interaction'): SAGEConv((-1, -1), hinsage_layer_sizes[1]),
+            ('siRNA', 'self_loop', 'siRNA'): SAGEConv((-1, -1), hinsage_layer_sizes[1]),
+            ('mRNA', 'self_loop', 'mRNA'): SAGEConv((-1, -1), hinsage_layer_sizes[1]),
+            ('interaction', 'to', 'siRNA'): SAGEConv((-1, -1), hinsage_layer_sizes[1]),
+            ('interaction', 'to', 'mRNA'): SAGEConv((-1, -1), hinsage_layer_sizes[1]),
             ('siRNA', 'self_loop', 'siRNA'): SAGEConv((-1, -1), hinsage_layer_sizes[1]),
             ('mRNA', 'self_loop', 'mRNA'): SAGEConv((-1, -1), hinsage_layer_sizes[1]),
         }, aggr='mean')
