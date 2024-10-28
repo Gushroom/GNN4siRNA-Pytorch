@@ -1,0 +1,209 @@
+digraph {
+	graph [size="27.45,27.45"]
+	node [align=left fontname=monospace fontsize=10 height=0.2 ranksep=0.1 shape=box style=filled]
+	4518688432 [label="
+ (2816)" fillcolor=darkolivegreen1]
+	4498531728 [label=SqueezeBackward1]
+	4524426384 -> 4498531728
+	4524426384 [label=AddmmBackward0]
+	4464286816 -> 4524426384
+	4721796080 [label="linear.bias
+ (1)" fillcolor=lightblue]
+	4721796080 -> 4464286816
+	4464286816 [label=AccumulateGrad]
+	4449373344 -> 4524426384
+	4449373344 [label=MeanBackward1]
+	4534483840 -> 4449373344
+	4534483840 [label=StackBackward0]
+	4529395344 -> 4534483840
+	4529395344 [label=AddBackward0]
+	4540529824 -> 4529395344
+	4540529824 [label=AddmmBackward0]
+	4721243424 -> 4540529824
+	4721791040 [label="conv2.convs.<siRNA___to___interaction>.lin_l.bias
+ (16)" fillcolor=lightblue]
+	4721791040 -> 4721243424
+	4721243424 [label=AccumulateGrad]
+	4721244336 -> 4540529824
+	4721244336 [label=DivBackward0]
+	4721243808 -> 4721244336
+	4721243808 [label=ScatterAddBackward0]
+	4530699712 -> 4721243808
+	4530699712 [label=IndexSelectBackward0]
+	4303736832 -> 4530699712
+	4303736832 [label=MulBackward0]
+	4721820240 -> 4303736832
+	4721820240 [label=ReluBackward0]
+	4721835360 -> 4721820240
+	4721835360 [label=AddBackward0]
+	4721834256 -> 4721835360
+	4721834256 [label=AddmmBackward0]
+	4721834880 -> 4721834256
+	4721787680 [label="conv1.convs.<siRNA___self_loop___siRNA>.lin_l.bias
+ (32)" fillcolor=lightblue]
+	4721787680 -> 4721834880
+	4721834880 [label=AccumulateGrad]
+	4721833920 -> 4721834256
+	4721833920 [label=TBackward0]
+	4721820288 -> 4721833920
+	4721787440 [label="conv1.convs.<siRNA___self_loop___siRNA>.lin_l.weight
+ (32, 64)" fillcolor=lightblue]
+	4721787440 -> 4721820288
+	4721820288 [label=AccumulateGrad]
+	4721820480 -> 4721835360
+	4721820480 [label=MmBackward0]
+	4721834448 -> 4721820480
+	4721834448 [label=TBackward0]
+	4721820768 -> 4721834448
+	4721787760 [label="conv1.convs.<siRNA___self_loop___siRNA>.lin_r.weight
+ (32, 64)" fillcolor=lightblue]
+	4721787760 -> 4721820768
+	4721820768 [label=AccumulateGrad]
+	4721244864 -> 4540529824
+	4721244864 [label=TBackward0]
+	4303736880 -> 4721244864
+	4721790800 [label="conv2.convs.<siRNA___to___interaction>.lin_l.weight
+ (16, 32)" fillcolor=lightblue]
+	4721790800 -> 4303736880
+	4303736880 [label=AccumulateGrad]
+	4498881216 -> 4529395344
+	4498881216 [label=MmBackward0]
+	4721243664 -> 4498881216
+	4721243664 [label=MulBackward0]
+	4721835408 -> 4721243664
+	4721835408 [label=ReluBackward0]
+	4721834640 -> 4721835408
+	4721834640 [label=MeanBackward1]
+	4721834688 -> 4721834640
+	4721834688 [label=StackBackward0]
+	4721834736 -> 4721834688
+	4721834736 [label=AddBackward0]
+	4721819808 -> 4721834736
+	4721819808 [label=AddmmBackward0]
+	4721820912 -> 4721819808
+	4498359792 [label="conv1.convs.<siRNA___to___interaction>.lin_l.bias
+ (32)" fillcolor=lightblue]
+	4498359792 -> 4721820912
+	4721820912 [label=AccumulateGrad]
+	4721819712 -> 4721819808
+	4721819712 [label=TBackward0]
+	4721823024 -> 4721819712
+	4720965616 [label="conv1.convs.<siRNA___to___interaction>.lin_l.weight
+ (32, 64)" fillcolor=lightblue]
+	4720965616 -> 4721823024
+	4721823024 [label=AccumulateGrad]
+	4721820576 -> 4721834736
+	4721820576 [label=MmBackward0]
+	4721821584 -> 4721820576
+	4721821584 [label=TBackward0]
+	4721821440 -> 4721821584
+	4720964976 [label="conv1.convs.<siRNA___to___interaction>.lin_r.weight
+ (32, 22)" fillcolor=lightblue]
+	4720964976 -> 4721821440
+	4721821440 [label=AccumulateGrad]
+	4721819760 -> 4721834688
+	4721819760 [label=AddBackward0]
+	4721821152 -> 4721819760
+	4721821152 [label=AddmmBackward0]
+	4721821632 -> 4721821152
+	4721374416 [label="conv1.convs.<mRNA___to___interaction>.lin_l.bias
+ (32)" fillcolor=lightblue]
+	4721374416 -> 4721821632
+	4721821632 [label=AccumulateGrad]
+	4721820528 -> 4721821152
+	4721820528 [label=TBackward0]
+	4721822160 -> 4721820528
+	4721373856 [label="conv1.convs.<mRNA___to___interaction>.lin_l.weight
+ (32, 256)" fillcolor=lightblue]
+	4721373856 -> 4721822160
+	4721822160 [label=AccumulateGrad]
+	4721821776 -> 4721819760
+	4721821776 [label=MmBackward0]
+	4721821968 -> 4721821776
+	4721821968 [label=TBackward0]
+	4721822064 -> 4721821968
+	4721374816 [label="conv1.convs.<mRNA___to___interaction>.lin_r.weight
+ (32, 22)" fillcolor=lightblue]
+	4721374816 -> 4721822064
+	4721822064 [label=AccumulateGrad]
+	4721245200 -> 4498881216
+	4721245200 [label=TBackward0]
+	4721835504 -> 4721245200
+	4721791120 [label="conv2.convs.<siRNA___to___interaction>.lin_r.weight
+ (16, 32)" fillcolor=lightblue]
+	4721791120 -> 4721835504
+	4721835504 [label=AccumulateGrad]
+	4534483984 -> 4534483840
+	4534483984 [label=AddBackward0]
+	4721243856 -> 4534483984
+	4721243856 [label=AddmmBackward0]
+	4721820096 -> 4721243856
+	4721792480 [label="conv2.convs.<mRNA___to___interaction>.lin_l.bias
+ (16)" fillcolor=lightblue]
+	4721792480 -> 4721820096
+	4721820096 [label=AccumulateGrad]
+	4721834016 -> 4721243856
+	4721834016 [label=DivBackward0]
+	4721821872 -> 4721834016
+	4721821872 [label=ScatterAddBackward0]
+	4721820192 -> 4721821872
+	4721820192 [label=IndexSelectBackward0]
+	4721822112 -> 4721820192
+	4721822112 [label=MulBackward0]
+	4721822400 -> 4721822112
+	4721822400 [label=ReluBackward0]
+	4721822304 -> 4721822400
+	4721822304 [label=AddBackward0]
+	4721820960 -> 4721822304
+	4721820960 [label=AddmmBackward0]
+	4721822784 -> 4721820960
+	4721789120 [label="conv1.convs.<mRNA___self_loop___mRNA>.lin_l.bias
+ (32)" fillcolor=lightblue]
+	4721789120 -> 4721822784
+	4721822784 [label=AccumulateGrad]
+	4721822544 -> 4721820960
+	4721822544 [label=TBackward0]
+	4721821536 -> 4721822544
+	4721788880 [label="conv1.convs.<mRNA___self_loop___mRNA>.lin_l.weight
+ (32, 256)" fillcolor=lightblue]
+	4721788880 -> 4721821536
+	4721821536 [label=AccumulateGrad]
+	4721822352 -> 4721822304
+	4721822352 [label=MmBackward0]
+	4721822256 -> 4721822352
+	4721822256 [label=TBackward0]
+	4721822688 -> 4721822256
+	4721789200 [label="conv1.convs.<mRNA___self_loop___mRNA>.lin_r.weight
+ (32, 256)" fillcolor=lightblue]
+	4721789200 -> 4721822688
+	4721822688 [label=AccumulateGrad]
+	4721820144 -> 4721243856
+	4721820144 [label=TBackward0]
+	4721821728 -> 4721820144
+	4721792240 [label="conv2.convs.<mRNA___to___interaction>.lin_l.weight
+ (16, 32)" fillcolor=lightblue]
+	4721792240 -> 4721821728
+	4721821728 [label=AccumulateGrad]
+	4720905184 -> 4534483984
+	4720905184 [label=MmBackward0]
+	4721243664 -> 4720905184
+	4721822448 -> 4720905184
+	4721822448 [label=TBackward0]
+	4721822592 -> 4721822448
+	4721792560 [label="conv2.convs.<mRNA___to___interaction>.lin_r.weight
+ (16, 32)" fillcolor=lightblue]
+	4721792560 -> 4721822592
+	4721822592 [label=AccumulateGrad]
+	4534484512 -> 4524426384
+	4534484512 [label=TBackward0]
+	4534484416 -> 4534484512
+	4721796000 [label="linear.weight
+ (1, 16)" fillcolor=lightblue]
+	4721796000 -> 4534484416
+	4534484416 [label=AccumulateGrad]
+	4498531728 -> 4518688432
+	4721372656 [label="
+ (2816, 1)" fillcolor=darkolivegreen3]
+	4524426384 -> 4721372656
+	4721372656 -> 4518688432 [style=dotted]
+}
